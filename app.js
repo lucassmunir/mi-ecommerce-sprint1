@@ -2,16 +2,18 @@ const express = require('express'); // importar el módulo de Express para crear
 
 const app = express(); // crear una aplicación de Express
 
-const patch = require('path'); // para manejar rutas en cualquier sistema operativo
+const path = require('path'); // para manejar rutas en cualquier sistema operativo
 
+
+// -- configuracion ---
 app.set('view engine', 'ejs'); // para usar ejs como motor de plantillas
+app.set('views', path.join(__dirname, 'views')); // esto define la ruta absoluta de views para asegurar que el proyecto funcione correctamente independientemente del directorio de ejecución.
 
-app.get('/', (req, res) => res.render('index')); // ruta para la página de inicio, renderiza la plantilla 'index.ejs'
-app.get('/login', (req, res) => res.render('login')); // ruta para la página de login, renderiza la plantilla 'login.ejs'
-app.get('/register', (req, res) => res.render('register')); // ruta para la página de registro, renderiza la plantilla 'register.ejs'
-app.get('/cart', (req, res) => res.render('cart')); // ruta para la página del carrito, renderiza la plantilla 'cart.ejs'
-app.get('/checkout', (req, res) => res.render('checkout')); // ruta para la página de checkout, renderiza la plantilla 'checkout.ejs'   
-
+app.get('/', (req, res) => res.render('pages/index')); // ruta para la página de inicio, renderiza la plantilla 'index.ejs'
+app.get('/login', (req, res) => res.render('pages/login')); // ruta para la página de login, renderiza la plantilla 'login.ejs'
+app.get('/register', (req, res) => res.render('pages/register')); // ruta para la página de registro, renderiza la plantilla 'register.ejs'
+app.get('/cart', (req, res) => res.render('pages/cart')); // ruta para la página del carrito, renderiza la plantilla 'cart.ejs'
+app.get('/checkout', (req, res) => res.render('pages/checkout')); // ruta para la página de checkout, renderiza la plantilla 'checkout.ejs'   
 
 
 
