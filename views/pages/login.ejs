@@ -1,0 +1,25 @@
+<%- include('../partials/head') %>
+<body>
+    <%- include('../partials/header') %>
+        <main class="register-container">
+            <div class="green-banner"></div>
+            <section class="register-card">
+                <h1>¡Hola!</h1>
+
+                <form action="/" method="GET" class="register-form">
+
+                    <label for="user-email" class="sr-only">Email</label>
+                    <input type="email" id="user-email" name="email" placeholder="Tu email" required>
+
+                    <label for="user-password" class="sr-only">Contraseña</label>
+                    <input type="password" id="user-password" name="password" placeholder="Tu nueva contraseña" required>
+
+                    <button type="submit" class="btn-submit">Iniciar Sesión</button>
+                </form>
+            </section>
+            <p class="login-link">
+                    ¿No tienes cuenta? <a href="/register">Regístrate</a>
+            </p>
+        </main>
+    <%- include('../partials/footer') %>
+</body>
