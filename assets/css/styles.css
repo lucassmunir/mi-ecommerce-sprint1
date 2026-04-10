@@ -1,0 +1,194 @@
+
+/* CONFIGURACIÓN GLOBAL*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Hace que el padding no aumente el tamaño total del elemento */
+    font-family: 'Roboto', sans-serif;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+body {
+    background-color: #f4f4f4; 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Asegura que el body ocupe toda la pantalla */
+}
+
+/* Header (Lógica Dinámica) */
+.main-header {
+    background-color: #ffffff;
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    width: 100%;
+}
+
+/* Contenedor base para el header */
+.header-minimal, .header-full {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 8px 20px;
+}
+
+/* Header minimalista */
+.header-minimal {
+    justify-content: flex-start;
+}
+
+/* Header completo */
+.header-full {
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00a68e;
+    text-decoration: none;
+}
+
+/* Página de registro / login (Main) */
+
+.register-container {
+    flex: 1; /* Hace que esta sección crezca y empuje al footer al fondo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding-bottom: 50px;
+}
+
+.green-banner {
+    background-color: #00a68e;
+    width: 100%;
+    height: 250px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.register-card {
+    background-color: white;
+    width: 90%;
+    max-width: 450px;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
+    z-index: 2;
+    margin-top: 80px;
+    text-align: center;
+}
+
+.register-card h1 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.register-form input {
+    width: 100%; 
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    font-size: 14px;
+    outline: none;
+}
+
+.register-form input:focus {
+    border-color: #00a68e;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    background-color: #4a555a;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #00a68e;
+}
+
+.login-link {
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+.login-link a {
+    color: #333;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.login-link a:hover {
+    color: #00a68e;
+}
+
+/* footer */
+
+.main-footer {
+    background-color: #ebebeb;
+    padding: 25px 0;
+    width: 100%;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 50px;
+    color: #888;
+}
+
+.footer-section.social a {
+    color: #888;
+    margin: 0 10px;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.footer-section.social a:hover {
+    color: #00a68e;
+}
+
+.footer-section.apps {
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+
+.footer-section.apps a {
+    color: #888;
+    text-decoration: none;
+}
+
+.footer-section.apps a:hover {
+    color: #00a68e;
+}

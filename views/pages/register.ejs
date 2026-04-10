@@ -1,0 +1,31 @@
+<%- include('../partials/head') %>
+<body>
+    <%- include('../partials/header') %>
+        <main class="register-container">
+            <div class="green-banner"></div>
+            <section class="register-card">
+                <h1>¡Registrate!</h1>
+
+                <form action="/register" method="POST" class="register-form">
+
+                    <label for="user-name" class="sr-only">Nombre Completo</label>
+                    <input type="text" id="user-name" name="name" placeholder="Tu nombre completo" required>
+
+                    <label for="user-email" class="sr-only">Email</label>
+                    <input type="email" id="user-email" name="email" placeholder="Tu email" required>
+
+                    <label for="user-password" class="sr-only">Contraseña</label>
+                    <input type="password" id="user-password" name="password" placeholder="Tu nueva contraseña" required>
+
+                    <label for="user-confirm-password" class="sr-only">Confirmar Contraseña</label>
+                    <input type="password" id="user-confirm-password" name="confirmPassword" placeholder="Repite tu contraseña" required>
+
+                    <button type="submit" class="btn-submit">Registrarse</button>
+                </form>
+            </section>
+            <p class="login-link">
+                    ¿Ya tienes cuenta? <a href="/login">Inicia Sesión</a>
+            </p>
+        </main>
+    <%- include('../partials/footer') %>
+</body>

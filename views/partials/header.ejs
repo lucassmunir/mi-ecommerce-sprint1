@@ -1,0 +1,16 @@
+<header class="main-header">
+    <div class="<%= headerType === 'minimal' ? 'header-minimal' : 'header-full' %>">
+        
+        <div class="logo-box">
+            <a href="/" class="logo">MiEcommerce</a>
+        </div>
+
+        <% if (headerType !== 'minimal') { %>
+            <div class="header-tools">
+                <input type="text" placeholder="Buscar...">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+        <% } %>
+        
+    </div>
+</header>
