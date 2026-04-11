@@ -1,16 +1,29 @@
 <header class="main-header">
     <div class="<%= headerType === 'minimal' ? 'header-minimal' : 'header-full' %>">
-        
         <div class="logo-box">
-            <a href="/" class="logo">MiEcommerce</a>
+            <a href="/" class="logo">Mi<span>Ecommerce</span></a>
         </div>
 
-        <% if (headerType !== 'minimal') { %>
-            <div class="header-tools">
-                <input type="text" placeholder="Buscar...">
-                <i class="fa-solid fa-cart-shopping"></i>
+        <% if (headerType==='full' ) { %>
+            <div class="search-header">
+                <input type="search" placeholder="Buscar productos...">
+                <i class="fa-solid fa-magnifying-glass"></i>
             </div>
-        <% } %>
-        
+
+            <div class="header-right">
+                <a href="/cart">
+                    <div class="icon-circle">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span class="badge">2</span>
+                    </div>
+                </a>
+                <a href="/login">
+                    <div class="user-pill">
+                        <img src="/img/home/avatar-lucas.jpg" alt="Lucas" class="avatar">
+                        <span class="user-name">Lucas</span>
+                    </div>
+                </a>
+            </div>
+         <% } %>
     </div>
 </header>

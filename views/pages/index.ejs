@@ -1,0 +1,53 @@
+<%- include('../partials/head') %>
+
+    <body>
+        <%- include('../partials/header') %>
+            <main class="home-container">
+                <%- include('../partials/categoriesBar') %>
+                    <section class="benefits-banner">
+                        <article class="benefit-card">
+                            <img src="/img/home/banner-disney.png" alt="Promo Disney">
+                            <div class="benefit-content">
+                                <img src="/img/home/logo-disney.jpg" alt="Disney+ Star+" class="benefit-logo">
+                                <div class="benefit-text">
+                                    <h4>50% OFF en Combo Plus</h4>
+                                    <p>Canjeando 50.000 puntos<br>MiEcommerce.</p>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="benefit-card">
+                            <img src="/img/home/banner-hbo.avif" alt="Promo HBO Max">
+                            <div class="benefit-content">
+                                <img src="/img/home/logo-hbo.jpg" alt="HBO Max" class="benefit-logo">
+                                <div class="benefit-text">
+                                    <h4>50% OFF en HBO Max</h4>
+                                    <p>Canjeando 50.000 puntos<br>MiEcommerce.</p>
+                                </div>
+                            </div>
+                        </article>
+                    </section>
+
+                    <section class="products-section">
+                        <h2>Te puede interesar</h2>
+                        <div class="products-items">
+                            <%- include('../partials/productCard', { productImg: '/img/home/daniels.png', productName: 'Whiskey Jack Daniels', productPrice: '150.000' }) %>
+                            <%- include('../partials/productCard', { productImg: '/img/home/fernet.png', productName: 'Fernet Branca', productPrice: '120.000' }) %>
+                            <%- include('../partials/productCard', { productImg: '/img/home/pritty.png', productName: 'Pritty', productPrice: '80.000' }) %>
+                            <%- include('../partials/productCard', { productImg: '/img/home/hesperidina.png', productName: 'Hesperidina', productPrice: '30.000' }) %>
+                        </div>
+                    </section>
+
+                    <section class="products-section">
+                        <h2>Los más pedidos</h2>
+                        <div class="products-items">
+                            <%- include('../partials/productCard', { productImg: '/img/home/pes6.png', productName: 'Pro Evolution Soccer 6', productPrice: '50.000' }) %>
+                            <%- include('../partials/productCard', { productImg: '/img/home/princeofpersia.png', productName: 'Prince of Persia - Las dos Coronas', productPrice: '30.000' }) %>
+                            <%- include('../partials/productCard', { productImg: '/img/home/gtasa.png', productName: 'Grand Theft Auto San Andreas', productPrice: '80.000' }) %>
+                            <%- include('../partials/productCard', { productImg: '/img/home/godofwar.png', productName: 'God of War 2', productPrice: '150.000' }) %>
+                        </div>
+                    </section>
+                <%- include('../partials/categoriesBar') %>  
+            </main>
+            <%- include('../partials/footer') %>
+    </body>
