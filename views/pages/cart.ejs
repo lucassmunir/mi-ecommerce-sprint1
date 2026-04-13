@@ -1,0 +1,87 @@
+<%- include('../partials/head', { titulo: titulo }) %>
+<body>
+    <%- include ('../partials/header', { titulo: titulo, headerType: headerType }) %>
+
+    <main class="cart-container">
+        
+        <div class="cart-header">
+            <a href="/" class="back-link"><i class="fas fa-arrow-left"></i> Volver al listado</a>
+            <h1>Productos en tu Carrito</h1>
+        </div>
+
+        <section class="cart-items">
+            <article class="cart-item">
+                <img src="/img/home/pes6.png" alt="Pro Evolution Soccer 6" class="cart-item-img">
+                <div class="cart-item-details">
+                    <h3>Pro Evolution Soccer 6 PS2</h3>
+                </div>
+                <div class="cart-item-actions">
+                    <button class="btn-remove">Quitar</button>
+                    <div class="quantity-control">
+                        <button class="btn-qty">-</button>
+                        <span class="qty-number">1</span>
+                        <button class="btn-qty">+</button>
+                    </div>
+                </div>
+                <div class="cart-item-price">
+                    <strong>19.900</strong>
+                </div>
+            </article>
+
+            <article class="cart-item">
+                <img src="/img/home/gtasa.png" alt="Grand Theft Auto San Andreas" class="cart-item-img">
+                <div class="cart-item-details">
+                    <h3>Grand Theft Auto San Andreas</h3>
+                </div>
+                <div class="cart-item-actions">
+                    <button class="btn-remove">Quitar</button>
+                    <div class="quantity-control">
+                        <button class="btn-qty">-</button>
+                        <span class="qty-number">2</span>
+                        <button class="btn-qty">+</button>
+                    </div>
+                </div>
+                <div class="cart-item-price">
+                    <strong>60.000</strong>
+                </div>
+            </article>
+
+            <article class="cart-item">
+                <img src="/img/home/godofwar.png" alt="God of War" class="cart-item-img">
+                <div class="cart-item-details">
+                    <h3>God of War</h3>
+                </div>
+                <div class="cart-item-actions">
+                    <button class="btn-remove">Quitar</button>
+                    <div class="quantity-control">
+                        <button class="btn-qty">-</button>
+                        <span class="qty-number">1</span>
+                        <button class="btn-qty">+</button>
+                    </div>
+                </div>
+                <div class="cart-item-price">
+                    <strong>50.000</strong>
+                </div>
+            </article>
+        </section>
+
+        <section class="cart-discount">
+            <label for="cupon">¿Tenés un cupón?</label>
+            <div class="discount-input-group">
+                <input type="text" id="cupon" placeholder="Ingresá tu código">
+                <button class="btn-apply">Aplicar</button>
+            </div>
+        </section>
+
+        <section class="cart-summary">
+            <div class="summary-total">
+                <span>Total de Puntos</span>
+                <strong>129.900</strong>
+            </div>
+            <a href="/checkout" class="btn-checkout">Ir a Pagar</a>
+        </section>
+
+    </main>
+
+    <%- include('../partials/footer') %>
+</body>

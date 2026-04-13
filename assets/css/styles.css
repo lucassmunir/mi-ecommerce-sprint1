@@ -8,6 +8,7 @@
    5. SECCIÓN DE PRODUCTOS (GRILLA)
    6. PÁGINA DE PRODUCTO (DETALLE Y ERROR)
    7. FOOTER
+   8. PÁGINA DEL CARRITO
 ========================================= */
 
 /* ========================================= */
@@ -535,6 +536,11 @@ body {
     font-size: 22px;
     color: #666;
 }
+
+.product-nav a:hover {
+    color: #00a68e;
+}
+
 .product-nav a {
     text-decoration: none;
     color: #333;
@@ -735,3 +741,230 @@ body {
     color: #00a68e;
 }
 
+/* ========================================= */
+/* 8. PÁGINA DEL CARRITO                     */
+/* ========================================= */
+
+.cart-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    flex: 1; /* Empuja el footer al fondo si hay pocos items */
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.cart-header .back-link {
+    display: inline-block;
+    margin-bottom: 15px;
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.cart-header .back-link:hover {
+    color: #00a68e;
+}
+
+.cart-header h1 {
+    font-size: 24px;
+    font-weight: 400;
+    color: #333;
+}
+
+/* Grilla de productos en el carrito */
+.cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.cart-item {
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    padding: 15px 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    gap: 20px;
+}
+
+.cart-item-img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.cart-item-details {
+    flex: 1;
+}
+
+.cart-item-details h3 {
+    font-size: 15px;
+    font-weight: 400;
+    color: #333;
+}
+
+.cart-item-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Botón oscuro de "Quitar" */
+.btn-remove {
+    background-color: #444;
+    color: white;
+    border: none;
+    padding: 6px 15px;
+    border-radius: 15px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-remove:hover {
+    background-color: #e74c3c; /* Se pone rojo al pasar el mouse */
+}
+
+/* Controles de Cantidad (- 1 +) */
+.quantity-control {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.btn-qty {
+    background: none;
+    border: none;
+    padding: 5px 12px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    transition: background 0.3s;
+}
+
+.btn-qty:hover {
+    background-color: #f0f0f0;
+}
+
+.qty-number {
+    font-size: 14px;
+    font-weight: 500;
+    min-width: 20px;
+    text-align: center;
+    color: #1a1a1a;
+}
+
+.cart-item-price {
+    min-width: 80px;
+    text-align: right;
+    font-size: 20px;
+    color: #1a1a1a;
+}
+
+/* BONUS: Sección de Descuento */
+.cart-discount {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.cart-discount label {
+    font-size: 14px;
+    color: #666;
+}
+
+.discount-input-group {
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    overflow: hidden;
+    background-color: white;
+}
+
+.discount-input-group input {
+    border: none;
+    outline: none;
+    padding: 8px 15px;
+    font-size: 14px;
+}
+
+.btn-apply {
+    background-color: #4a555a;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn-apply:hover {
+    background-color: #00a68e;
+}
+
+/* Resumen Final */
+.cart-summary {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+}
+
+.summary-total {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 20px;
+    color: #333;
+}
+
+.summary-total strong {
+    font-size: 28px;
+    color: #1a1a1a;
+}
+
+.btn-checkout {
+    background-color: #444;
+    color: white;
+    text-decoration: none;
+    padding: 12px 40px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+.btn-checkout:hover {
+    background-color: #00a68e;
+}
+
+/* Para celulares: Que no se apachurre todo */
+@media (max-width: 768px) {
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+        position: relative;
+    }
+    
+    .cart-item-price {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .cart-discount {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+}
