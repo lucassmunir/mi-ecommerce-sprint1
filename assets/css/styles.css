@@ -1,42 +1,58 @@
+/* =========================================
+   TABLA DE CONTENIDOS - MI E-COMMERCE
+   
+   1. CONFIGURACIÓN GLOBAL
+   2. HEADER
+   3. PÁGINA DE REGISTRO / LOGIN
+   4. BARRA DE NAVEGACIÓN Y BANNERS (HOME)
+   5. SECCIÓN DE PRODUCTOS (GRILLA)
+   6. PÁGINA DE PRODUCTO (DETALLE Y ERROR)
+   7. FOOTER
+========================================= */
 
-/* CONFIGURACIÓN GLOBAL*/
+/* ========================================= */
+/* 1. CONFIGURACIÓN GLOBAL                   */
+/* ========================================= */
 * {
-    margin: 0;
-    padding: 0;
+    margin: 0; /* Elimina el margen por defecto de todos los elementos */
+    padding: 0; /* Elimina el padding por defecto de todos los elementos */
     box-sizing: border-box; /* Hace que el padding no aumente el tamaño total del elemento */
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif; /* Fuente moderna y legible */
 }
 
 .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
+    position: absolute; /* Saca el elemento del flujo normal */
+    width: 1px; /* Lo hace casi invisible */
+    height: 1px; /* Lo hace casi invisible */
+    padding: 0; /* Sin padding para que no ocupe espacio extra */
+    margin: -1px; /* Lo mueve fuera de la pantalla */
+    overflow: hidden; /* Esconde cualquier contenido que pueda desbordar */
+    clip: rect(0, 0, 0, 0); /* Recorta el elemento para que no sea visible */
+    border: 0; /* Sin bordes para que no ocupe espacio extra */
 }
 
 body {
-    background-color: #ffffff;
-    display: flex;
-    flex-direction: column;
+    background-color: #ebebeb; /* Un gris claro para el fondo general */
+    display: flex; /* Usamos flexbox para organizar el layout general */
+    flex-direction: column; /* Organizamos los elementos en columna (header, main, footer) */
     min-height: 100vh; /* Asegura que el body ocupe toda la pantalla */
 }
 
-/* Header (Lógica Dinámica) */
 
+/* ========================================= */
+/* 2. HEADER                                 */
+/* ========================================= */
+
+/* El header completo, que incluye el fondo gris, el logo, el buscador, etc. */
 .main-header {
-    background-color: #ffffff;
-    padding: 15px 0;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    width: 100%;
-    border-bottom: #7c7c7c solid 1px;;
+    background-color: #ebebeb; /* Mismo gris claro que el fondo para que se integre bien */
+    padding: 15px 0; /* Un poco de espacio arriba y abajo */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Sombra sutil para darle profundidad */
+    width: 100%; /* Asegura que el header ocupe todo el ancho de la pantalla */
+    border-bottom: #7c7c7c solid 1px;; /* Línea fina para separar el header del resto del contenido */
 }
 
-/* Contenedor base para el header */
-
+/* Tanto el header minimalista como el completo comparten esta configuración básica */
 .header-minimal, .header-full {
     display: flex;
     align-items: center;
@@ -45,92 +61,98 @@ body {
     box-sizing: border-box; 
 }
 
-/* Contenedor principal del header completo */
-
+/* El header completo tiene un gap más grande para separar el logo del buscador y el resto de los íconos */
 .header-full {
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-    gap: 100px; 
+    margin: 0 auto; /* Centra el contenido del header */
+    display: flex; /* Usamos flexbox para organizar el logo, el buscador y los íconos */
+    align-items: center; /* Centra verticalmente los elementos del header */
+    justify-content: space-between; /* Separa el logo a la izquierda, el buscador en el centro y los íconos a la derecha */
+    padding: 10px 20px; /* Un poco de espacio dentro del header */
+    gap: 100px; /* Un espacio grande entre el logo y el buscador para que no queden pegados */
 }
 
-/* Buscador */
-
+/* El buscador del header completo */
 .search-header {
     flex: 1; /* Esto hace que el buscador crezca y ocupe el centro */
-    display: flex;
-    align-items: center;
-    background: white;
-    border: 1px solid #ccc;
-    border-radius: 25px;
-    padding: 5px 20px;
+    display: flex; /* Usamos flexbox para organizar el input y el botón de búsqueda */
+    align-items: center; /* Centra verticalmente el input y el botón */
+    background: white; /* Fondo blanco para que destaque sobre el gris del header */
+    border: 1px solid #ccc; /* Borde gris claro para definir el contorno del buscador */
+    border-radius: 25px; /* Bordes redondeados para un look más moderno */
+    padding: 5px 20px; /* Un poco de espacio dentro del buscador */
 }
 
+/* El input del buscador, que ocupa todo el espacio disponible dentro del contenedor del buscador */
 .search-header input {
-    border: none;
-    outline: none;
-    width: 100%;
-    padding: 8px;
+    border: none; /* Sin bordes para que se integre bien dentro del contenedor del buscador */
+    outline: none; /* Elimina el contorno azul que aparece al hacer clic en el input */
+    width: 100%; /* Hace que el input ocupe todo el espacio disponible dentro del contenedor del buscador */
+    padding: 8px; /* Un poco de espacio dentro del input para que el texto no quede pegado a los bordes */
+    font-size: 14px; /* Tamaño de fuente legible para el texto del buscador */
 }
 
-/* Carrito y Perfil */
-
+/* el contenedor de los íconos a la derecha del header */
 .header-right {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+    display: flex; /* Usamos flexbox para organizar los íconos a la derecha del header */
+    align-items: center; /* Centra verticalmente los íconos */
+    gap: 15px; /* Un espacio entre cada ícono para que no queden pegados */
 }
 
+/* El círculo oscuro que contiene cada ícono (carrito, usuario, etc.) */
 .icon-circle {
-    background-color: #444;
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+    background-color: #444; /* Un gris oscuro para el fondo del círculo que contiene el ícono */
+    width: 38px; /* Ancho fijo para que todos los círculos tengan el mismo tamaño */
+    height: 38px; /* Alto fijo para que todos los círculos tengan el mismo tamaño */
+    border-radius: 50%; /* Hace que el contenedor sea un círculo perfecto */
+    display: flex; /* Usamos flexbox para centrar el ícono dentro del círculo */
+    justify-content: center; /* Centra horizontalmente el ícono dentro del círculo */
+    align-items: center; /* Centra verticalmente el ícono dentro del círculo */
+    position: relative; /* Esto es necesario para posicionar la badge de notificaciones en la esquina del círculo */
 }
 
-.icon-circle i { color: white; font-size: 16px; }
+/* El ícono dentro del círculo, que es un elemento <i> de Font Awesome */
+.icon-circle i { 
+    color: white; /* El color blanco para que destaque sobre el fondo oscuro del círculo */ 
+    font-size: 16px; /* Tamaño de fuente adecuado para que el ícono sea claramente visible dentro del círculo */
+}
 
+/* La badge de notificaciones que aparece en la esquina del círculo del carrito cuando hay productos agregados, o en el ícono de usuario cuando hay mensajes nuevos, etc. */
 .badge {
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    background-color: #e74c3c;
-    color: white;
-    font-size: 10px;
-    padding: 2px 5px;
-    border-radius: 50%;
-    font-weight: bold;
+    position: absolute; /* Posicionamos la badge de forma absoluta dentro del círculo para que podamos colocarla en la esquina */
+    top: -5px; /* La movemos un poco hacia arriba para que quede en la esquina superior del círculo */
+    right: -5px; /* La movemos un poco hacia la derecha para que quede en la esquina superior del círculo */
+    background-color: #e74c3c; /* Un rojo vibrante para que la badge destaque y llame la atención del usuario */
+    color: white; /* El color blanco para el texto dentro de la badge para que sea legible sobre el fondo rojo */
+    font-size: 10px; /* Tamaño de fuente pequeño para que la badge no sea demasiado grande y no tape el ícono debajo */
+    padding: 2px 5px; /* Un poco de espacio dentro de la badge para que el texto no quede pegado a los bordes */
+    border-radius: 50%; /* Hace que la badge sea un círculo perfecto */
+    font-weight: bold; /* Un poco de negrita para que el número dentro de la badge sea más visible y fácil de leer */
 }
 
-/* La píldora de usuario */
-
+/* El contenedor del ícono de usuario cuando el usuario ha iniciado sesión, que muestra su nombre y su avatar */
 .user-pill {
-    background-color: #444;
-    display: flex;
-    align-items: center;
-    padding: 4px 15px 4px 4px; 
-    border-radius: 25px;
-    gap: 10px;
-    color: white;
+    background-color: #444; /* Un gris oscuro para el fondo del contenedor del usuario, que hace contraste con el fondo claro del header */
+    display: flex; /* Usamos flexbox para organizar el avatar y el nombre del usuario dentro del contenedor */
+    align-items: center; /* Centra verticalmente el avatar y el nombre del usuario dentro del contenedor */
+    padding: 4px 15px 4px 4px; /* Un poco de espacio dentro del contenedor del usuario, con más padding a la derecha para separar el nombre del borde del contenedor */
+    border-radius: 25px; /* Bordes redondeados para que el contenedor del usuario tenga un look más moderno y amigable */
+    gap: 10px; /* Un espacio entre el avatar y el nombre del usuario para que no queden pegados */
+    color: white; /* El color blanco para el texto del nombre del usuario para que destaque sobre el fondo oscuro del contenedor */
 }
 
+/* El avatar del usuario dentro del contenedor del usuario, que es una imagen circular pequeña */ 
 .avatar {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 1px solid #666;
+    width: 30px; /* Ancho fijo para que todos los avatares tengan el mismo tamaño, incluso si las imágenes originales son de diferentes tamaños */
+    height: 30px; /* Alto fijo para que todos los avatares tengan el mismo tamaño, incluso si las imágenes originales son de diferentes tamaños */
+    border-radius: 50%; /* Hace que la imagen del avatar sea un círculo perfecto, independientemente de su forma original */
+    object-fit: cover; /* Esto asegura que la imagen del avatar se recorte de manera adecuada para llenar el círculo sin distorsionarse, manteniendo su proporción original */
+    border: 1px solid #666; /* Un borde gris para darle un poco de definición al avatar y hacer que destaque sobre el fondo oscuro del contenedor del usuario */
 }
 
+/* El nombre del usuario dentro del contenedor del usuario, que se muestra al lado del avatar */
 .user-name {
-    font-size: 14px;
-    font-weight: 300;
+    font-size: 14px; /* Tamaño de fuente adecuado para que el nombre del usuario sea legible pero no demasiado grande para el espacio disponible dentro del contenedor del usuario */
+    font-weight: 300; /* Un peso de fuente ligero para que el nombre del usuario tenga un look más moderno y elegante, y para que no compita visualmente con el avatar */
 }
 
 .logo {
@@ -141,8 +163,10 @@ body {
     padding: 10px 20px;
 }
 
-/* Página de registro / login (Main) */
 
+/* ========================================= */
+/* 3. PÁGINA DE REGISTRO / LOGIN             */
+/* ========================================= */
 .register-container {
     flex: 1; /* Hace que esta sección crezca y empuje al footer al fondo */
     display: flex;
@@ -230,12 +254,16 @@ body {
     color: #00a68e;
 }
 
-/* Barra de navegación de Productos */
 
+/* ========================================= */
+/* 4. BARRA DE NAVEGACIÓN Y BANNERS (HOME)   */
+/* ========================================= */
+
+/* Barra de navegación de Productos */
 .categories-bar {
     background-color: #444;
     padding: 15px 10px; 
-    margin: 40px 0; 
+    margin: 40px auto; 
     width: 90%;          
     max-width: 1100px;
     display: flex;
@@ -259,7 +287,6 @@ body {
 
 
 /* Quitar la rayita en pantallas muy chicas para que no quede raro al romperse las filas */
-
 @media (max-width: 768px) {
     .category-item {
         border-right: none;
@@ -297,7 +324,6 @@ body {
 }
 
 /* banner de beneficios */
-
 .home-container {
     flex: 1; 
     display: flex;
@@ -307,15 +333,14 @@ body {
     padding-bottom: 50px;
     background: linear-gradient(
         to bottom, 
-        #f4f4f4 0px, 
-        #f4f4f4 200px,   
+        #ebebeb 0px, 
+        #ebebeb 200px,   
         #00a68e 200px,   
         #00a68e 540px,  
-        #ffffff 540px,   
-        #ffffff 100%
+        #ebebeb 540px,  
+        #ebebeb 100%  
     );
 }
-
 
 .benefits-banner {
     width: 90%;         
@@ -327,7 +352,6 @@ body {
     padding: 0;
     margin-bottom: 60px;
 }
-
 
 .benefit-card {
     position: relative;
@@ -345,7 +369,6 @@ body {
 }
 
 /* Imagen de fondo de la tarjeta */
-
 .benefit-card > img {
     width: 100%;
     height: 100%;
@@ -353,7 +376,6 @@ body {
 }
 
 /* El texto y logos que van arriba de la imagen */
-
 .benefit-content {
     position: absolute;
     bottom: 0;
@@ -384,8 +406,11 @@ body {
 }
 
 
-/* Contenedor de la sección completa */
+/* ========================================= */
+/* 5. SECCIÓN DE PRODUCTOS (GRILLA)          */
+/* ========================================= */
 
+/* Contenedor de la sección completa */
 .products-section {
     width: 90%;        
     max-width: 1100px;   
@@ -400,7 +425,6 @@ body {
 }
 
 /* Contenedor de los items (La grilla) */
-
 .products-items {
     display: flex;
     justify-content: space-between; 
@@ -426,7 +450,6 @@ body {
 .product-card:hover {
     transform: translateY(-5px);
 }
-
 
 .product-link-wrapper {
     text-decoration: none;
@@ -494,13 +517,186 @@ body {
 }
 
 
-/* footer */
+/* ========================================= */
+/* 6. PÁGINA DE PRODUCTO (DETALLE Y ERROR)   */
+/* ========================================= */
+
+/* Contenedor general */
+.product-container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 20px auto;
+    flex: 1; /* Empuja el footer al fondo */
+}
+
+/* El camino (breadcrumbs) */
+.product-nav {
+    margin-bottom: 20px;
+    font-size: 22px;
+    color: #666;
+}
+.product-nav a {
+    text-decoration: none;
+    color: #333;
+}
+.product-nav .separator {
+    margin: 0 10px;
+}
+
+/* La Ficha Blanca */
+.product-detail-card {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 30px;
+    display: flex; /* Divide fotos de info */
+    gap: 40px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+    border: 1px solid #f0f0f0;
+}
+
+.product-images {
+    display: flex; /* Fotos chiquitas al lado de la grande */
+    gap: 15px;
+    flex: 1.5; /* Le damos un poco más de espacio a las fotos */
+}
+
+.column-small-images {
+    display: flex;
+    flex-direction: column; /* Una abajo de la otra */
+    gap: 10px;
+}
+
+.img-small {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.main-image-box {
+    flex: 1;
+}
+
+.img-big {
+    width: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+.product-info {
+    background-color: #ffffff;
+    border: 1px solid #7e7e7e;
+    border-radius: 15px;
+    flex: 1; /* Ocupa el resto del espacio */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+}
+
+.product-title {
+    font-size: 28px;
+    font-weight: 500;
+    color: #333;
+}
+
+.price-box {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.price-number {
+    font-size: 36px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.price-label {
+    font-size: 14px;
+    color: #888;
+    letter-spacing: 1px;
+}
+
+.btn-cart {
+    background-color: #444; /* El color oscuro del diseño */
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-cart:hover {
+    background-color: #00a68e; /* Verde al pasar el mouse */
+}
+
+.product-description {
+    color: #666;
+    line-height: 1.6;
+    font-size: 15px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.products-section-detail {
+    width: 100%; /* Ocupa el ancho disponible del product-container */
+    margin-top: 50px; /* Separación con la ficha de arriba */
+}
+
+.products-items {
+    display: flex; /* Flex para organizar las tarjetas en filas */
+    justify-content: space-between; /* Distribuye las 4 tarjetas */
+    gap: 20px; /* Espacio entre tarjetas */
+    flex-wrap: wrap; /* Permite que las tarjetas se muevan a la siguiente fila si no caben en una sola línea */
+}
+
+
+
+.products-section-detail h2 {
+    margin-bottom: 25px;
+    font-weight: 300;
+    color: #333;
+}
+
+.error-container {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 80px 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border: 1px solid #f0f0f0;
+    margin-bottom: 50px;
+}
+
+.error-container h2 {
+    font-size: 28px;
+    font-weight: 500;
+    color: #e74c3c; 
+    margin-bottom: 15px;
+}
+
+.error-container p {
+    font-size: 16px;
+    color: #666;
+}
+
+
+/* ========================================= */
+/* 7. FOOTER                                 */
+/* ========================================= */
 
 .main-footer {
     background-color: #ebebeb;
     padding: 25px 0;
     width: 100%;
     text-align: center;
+    border-top: #7c7c7c solid 1px;
 }
 
 .footer-container {
@@ -538,3 +734,4 @@ body {
 .footer-section.apps a:hover {
     color: #00a68e;
 }
+

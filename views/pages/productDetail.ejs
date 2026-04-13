@@ -1,0 +1,70 @@
+<%- include('../partials/head', { titulo: titulo }) %>
+
+    <body>
+        <%- include ('../partials/header', { titulo: titulo, headerType: headerType }) %>
+            <main class="product-container">
+
+                <% if (existe) { %>
+
+                    <nav class="product-nav">
+                        <a href="/">Volver al listado</a>
+                        <span class="separator">></span>
+                        <a href="#">Juegos</a>
+                    </nav>
+
+                    <section class="product-detail-card">
+                        <div class="product-images">
+                            <div class="column-small-images">
+                                <img src="/img/home/pes6.png" alt="foto pequeña" class="img-small">
+                                <img src="/img/home/pes6img2.jpg" alt="foto pequeña" class="img-small">
+                                <img src="/img/home/pes6img3.jpg" alt="foto pequeña" class="img-small">
+                            </div>
+                            <div class="main-image-box">
+                                <img src="/img/home/pes6.png" alt="Pro Evolution Soccer 6" class="img-big">
+                            </div>
+                        </div>
+
+                        <div class="product-info">
+                            <h1 class="product-title">Pro Evolution Soccer 6 PS2</h1>
+
+                            <div class="price-box">
+                                <span class="price-number">19.900</span>
+                                <span class="price-label">PUNTOS</span>
+                            </div>
+
+                            <button class="btn-cart">Agregar al Carrito</button>
+
+                            <div class="product-description">
+                                <p>Es el mejor juego de fútbol de la historia.</p>
+                                <p>No hay otro juego que lo iguale. Su jugabilidad es excepcional, con gráficos
+                                    impresionantes y una jugabilidad realista. Es el juego de fútbol definitivo para los
+                                    amantes del deporte. Si eres fanático del fútbol, no puedes perderte Pro Evolution
+                                    Soccer 6. Es una experiencia de juego inigualable que te mantendrá entretenido durante
+                                    horas.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                <% } else { %>
+                    
+                    <div class="error-container">
+                        <h2>¡Ups! El producto no existe</h2>
+                        <p>Pero mirá estas otras opciones que tenemos para vos:</p>
+                    </div>
+
+                <% } %>
+                <section class="products-section-detail">
+                    <h2>Te puede interesar</h2>
+                    <div class="products-items">
+                        <%- include('../partials/productCard', { productImg: '/img/home/dragonballz.png' , productName: 'Dragon Ball Z' , productPrice: '12.900' }) %>
+                        <%- include('../partials/productCard', { productImg: '/img/home/princeofpersia.png' ,productName: 'Prince Of Persia' , productPrice: '120.000' }) %>
+                        <%- include('../partials/productCard', { productImg: '/img/home/godofwar.png' ,productName: 'God of War' , productPrice: '80.000' }) %>
+                        <%- include('../partials/productCard', { productImg: '/img/home/gtasa.png' ,productName: 'Grand Theft Auto San Andreas' , productPrice: '30.000' }) %>
+                    </div>
+                </section>
+                
+                
+
+            </main> <%- include('../partials/categoriesBar') %>
+         <%- include('../partials/footer') %>
+    </body>

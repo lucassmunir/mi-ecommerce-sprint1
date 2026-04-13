@@ -15,9 +15,37 @@ app.get('/login', (req, res) => res.render('pages/login', { titulo: 'Iniciar Ses
 app.get('/register', (req, res) => res.render('pages/register', { titulo: 'Registrate - Mi E-commerce', headerType: 'minimal' })); // ruta para la página de registro, renderiza la plantilla 'register.ejs' pasando un objeto con el título y el tipo de header para personalizar la página de registro
 app.get('/cart', (req, res) => res.render('pages/cart', { titulo: 'Carrito - Mi E-commerce', headerType: 'full' })); // ruta para la página del carrito, renderiza la plantilla 'cart.ejs'
 app.get('/checkout', (req, res) => res.render('pages/checkout', { titulo: 'Checkout - Mi E-commerce', headerType: 'full' })); // ruta para la página de checkout, renderiza la plantilla 'checkout.ejs'    
+app.get('/product', (req, res) => {
+    res.render('pages/productDetail', { 
+        existe: true,
+        titulo: 'Producto - Mi E-commerce',
+        headerType: 'full',
+        nombre: 'Pro Evolution Soccer 6',
+        precio: '19.900',
+        imagen: '/img/home/pes6.png'
+    });
+});
 
+app.get('/product/:id', (req, res) => {
+    const productId = req.params.id;
 
-
+    if (productId === '1') {
+        res.render('pages/productDetail', { 
+            existe: true,
+            titulo: 'Producto - Mi E-commerce',
+            headerType: 'full',
+            nombre: 'Pro Evolution Soccer 6',
+            precio: '19.900',
+            imagen: '/img/home/pes6.png'
+        });
+    } else {
+        res.render('pages/productDetail', { 
+            existe: false,
+            titulo: 'Producto no encontrado',
+            headerType: 'full' 
+        });
+    }
+});
 
 
 
