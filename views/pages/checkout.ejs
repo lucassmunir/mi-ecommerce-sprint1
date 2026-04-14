@@ -1,0 +1,62 @@
+<%- include('../partials/head') %>
+
+    <body>
+        <%- include('../partials/header') %>
+            <main class="checkout-container">
+
+                <div class="checkout-header">
+                    <div class="secure-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="header-titles">
+                        <h1>Checkout Seguro</h1>
+                        <p>Estás a un paso de confirmar tu orden</p>
+                    </div>
+                </div>
+
+                <section class="checkout-summary">
+                    <h2>Resumen de tu compra</h2>
+                    <div class="checkout-items">
+                        <div class="checkout-item">
+                            <img src="/img/home/pes6.png" alt="Pro Evolution Soccer 6" class="checkout-item-img">
+                            <div class="checkout-item-details">
+                                <h3>Pro Evolution Soccer 6 PS2</h3>
+                                <p>Cantidad: 1</p>
+                            </div>
+                            <div class="checkout-item-price">
+                                <strong>19.900</strong>
+                            </div>
+                        </div>
+
+                        <div class="checkout-item">
+                            <img src="/img/home/gtasa.png" alt="Grand Theft Auto San Andreas" class="checkout-item-img">
+                            <div class="checkout-item-details">
+                                <h3>Grand Theft Auto San Andreas</h3>
+                                <p>Cantidad: 2</p>
+                            </div>
+                            <div class="checkout-item-price">
+                                <strong>60.000</strong>
+                            </div>
+                        </div>
+
+                        <div class="checkout-item">
+                            <img src="/img/home/godofwar.png" alt="God of War" class="checkout-item-img">
+                            <div class="checkout-item-details">
+                                <h3>God of War</h3>
+                                <p>Cantidad: 1</p>
+                            </div>
+                            <div class="checkout-item-price">
+                                <strong>40.000</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checkout-total">
+                        <h3>Total a pagar: 119.900 PUNTOS</h3>
+                        <button class="btn-finalize">Finalizar Compra</button>
+                    </div>
+                </section>
+
+            </main>
+            <%- include('../partials/footer') %>
+    </body>

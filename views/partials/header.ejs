@@ -17,13 +17,37 @@
                         <span class="badge">2</span>
                     </div>
                 </a>
-                <a href="/login">
-                    <div class="user-pill">
+                
+                <div class="user-pill" onclick="toggleMenu()" style="cursor: pointer;">
+                    <img src="/img/home/avatar-lucas.jpg" alt="Lucas" class="avatar">
+                    <span class="user-name">Lucas</span>
+                </div>
+
+                <div class="mobile-menu-dropdown" id="mobileMenu">
+                    <div class="mobile-menu-header-item">
                         <img src="/img/home/avatar-lucas.jpg" alt="Lucas" class="avatar">
-                        <span class="user-name">Lucas</span>
+                        <span>Lucas</span>
                     </div>
-                </a>
+                    <ul class="mobile-menu-links">
+                        <li><a href="/">Inicio</a></li>
+
+                        <li><a href="/login">Iniciar Sesión</a></li>
+                        <li><a href="/register">Registrarse</a></li>
+
+                        <li><a href="#">Mis Compras</a></li>
+                        <li><a href="#">Favoritos</a></li>
+                        <li><a href="#">Historial</a></li>
+                        <li><a href="#">Cambiar a Tema Oscuro</a></li>
+                    </ul>
+                </div>
             </div>
          <% } %>
     </div>
 </header>
+
+<script>
+    function toggleMenu() {
+        const menu = document.getElementById('mobileMenu');
+        menu.classList.toggle('active');
+    }
+</script>
